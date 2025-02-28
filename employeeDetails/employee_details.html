@@ -11,9 +11,12 @@
     <button onclick="calculateTotalSalaries()">Calculate Total Salaries</button>
     <button onclick="displayHREmployees()">Display HR Employees</button>
     <button onclick="findEmployeeById(Number(document.getElementById('empId').value))">Find Employee by ID</button>
-    <!-- <button onclick="findEmployeeById(1)">Find Employee by ID</button> -->
     <label for="width">Employee Id: </label>
     <input type="number" id="empId"><br><br>
+
+    <button onclick="findEmployeeBySpecialization(document.getElementById('speciality').value)">Find Employee by Specialization</button>
+    <input type="string" id="speciality"><br><br>
+    
 
   </div>
 
