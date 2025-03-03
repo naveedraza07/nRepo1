@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Forms and Display Output</title>
+    <style>
+        /* Styling divs to look like buttons */
+        .button-div {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        /* Styling the result divs */
+        .result {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- First Form -->
+    <form id="myForm1">
+        <label for="name1">Name:</label>
+        <input type="text" id="name1" name="name1" required>
+        <div id="submitForm1" class="button-div">Submit Form 1</div>
+    </form>
+    <div id="resultForm1" class="result" style="display:none;"></div>
+
+    <hr>
+
+    <!-- Second Form -->
+    <form id="myForm2">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <div id="submitForm2" class="button-div">Submit Form 2</div>
+    </form>
+    <div id="resultForm2" class="result"></div>
+
+    <script>
+        
+        document.getElementById('myForm1').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting in the traditional way
+            var name = document.getElementById('name1').value;
+            var resultText = 'Form 1 submitted! Name: ' + name;
+            document.getElementById('resultForm1').innerHTML = resultText;
+            document.getElementById('resultForm1').style.display = 'block'; // Show result div
+        });
+
+        document.getElementById('myForm2').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting in the traditional way
+            alert('na;');
+            var email = document.getElementById('email').value;
+            var resultText = 'Form 2 submitted! Email: ' + email;
+            document.getElementById('resultForm2').innerHTML = resultText;
+            document.getElementById('resultForm2').style.display = 'block'; // Show result div
+        });
+
+        // // Attach event listeners to the div buttons to submit the forms
+        document.getElementById('submitForm1').addEventListener('click', function() {
+            document.getElementById('myForm1').submit(); // Submit Form 1 programmatically
+        });
+
+        document.getElementById('submitForm2').addEventListener('click', function() {
+            document.getElementById('myForm2').submit(); // Submit Form 2 programmatically
+        });
+    </script>
+
+</body>
+</html>

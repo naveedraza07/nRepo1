@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Report</title>
+</head>
+<body>
+   <h1>Weather Report</h1>
+
+  <form id="weatherForm">
+ <p>
+            <label for="city">Enter City:</label>
+            <input type="text" id="city" name="city">
+
+    <button id="submitByCity">Get Weather</button>
+</p>
+  </form>
+
+  <form id="weatherFormByCoord">
+    <p>
+        <label for="lon">Enter longtitude:</label>
+        <input type="text" id="lon" name="longtitude">
+    
+        <label for="lat">Enter longtitude:</label>
+        <input type="text" id="lat" name="latitude">
+        <button id="submitByCoord">Get Weather By Coord</button>
+    </p>     
+
+  </form>
+
+  <div id="weatherInfo"></div>
+<script src="./weather_report.js"></script>
+</body>
+</html>

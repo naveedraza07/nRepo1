@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Forms Using Event Listener</title>
+    <style>
+        /* Styling divs to look like buttons */
+        .button-div {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+            margin: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- First Form -->
+    <form id="myForm1">
+        <label for="name1">Name:</label>
+        <input type="text" id="name1" name="name1" required>
+        <div id="submitForm1" class="button-div">Submit Form 1</div>
+    </form>
+
+    <hr>
+
+    <!-- Second Form -->
+    <form id="myForm2">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <div id="submitForm2" class="button-div">Submit Form 2</div>
+    </form>
+
+    <script>
+        // Attach event listeners to the forms
+        document.getElementById('myForm1').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting in the traditional way
+            alert('Form 1 submitted!');
+            // You can add logic here to handle the form data or send it somewhere
+        });
+
+        document.getElementById('myForm2').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting in the traditional way
+            alert('Form 2 submitted!');
+            // You can add logic here to handle the form data or send it somewhere
+        });
+
+        // Attach event listeners to the div buttons to submit the forms
+        document.getElementById('submitForm1').addEventListener('click', function() {
+            document.getElementById('myForm1').submit(); // Submit Form 1 programmatically
+        });
+
+        document.getElementById('submitForm2').addEventListener('click', function() {
+            document.getElementById('myForm2').submit(); // Submit Form 2 programmatically
+        });
+    </script>
+
+</body>
+</html>
